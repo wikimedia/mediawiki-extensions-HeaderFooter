@@ -9,15 +9,14 @@ class HeaderFooter
 	 */
 	public static function hOutputPageParserOutput( &$op, $parserOutput ) {
 
-		$action = $op->parserOptions()->getUser()->getRequest()->getVal("action");
+		$action = $op->getRequest()->getVal("action");
 		if ( ($action == 'edit') || ($action == 'submit') || ($action == 'history') ) {
 			return true;
 		}
 
-		global $wgTitle;
-
-		$ns = $wgTitle->getNsText();
-		$name = $wgTitle->getPrefixedDBKey();
+		$title = $op->getTitle();
+		$ns = $title->getNsText();
+		$name = $title->getPrefixedDBKey();
 
 		$text = $parserOutput->getText();
 
