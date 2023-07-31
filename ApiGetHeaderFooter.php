@@ -8,6 +8,7 @@
  */
 
 use Wikimedia\ParamValidator\ParamValidator;
+use MediaWiki\MediaWikiServices;
 
 /**
  * API module to review revisions
@@ -35,9 +36,7 @@ class ApiGetHeaderFooter extends ApiBase {
 			$messageText = '';
 		}
 
-		global $wgParser;
-
-		$messageText = $wgParser->parse(
+		$messageText = MediaWikiServices::getInstance()->getParser()->parse(
 			$messageText,
 			$contextTitle,
 			ParserOptions::newFromUser( $this->getUser() )

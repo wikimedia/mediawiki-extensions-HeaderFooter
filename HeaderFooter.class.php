@@ -16,10 +16,9 @@ class HeaderFooter
 			return true;
 		}
 
-		global $wgTitle;
-
-		$ns = $wgTitle->getNsText();
-		$name = $wgTitle->getPrefixedDBKey();
+		$title = $op->getTitle();
+		$ns = $title->getNsText();
+		$name = $title->getPrefixedDBKey();
 
 		$nsheader = self::conditionalInclude( 'hf_nsheader', 'hf-nsheader', $ns, $parserOutput );
 		$header   = self::conditionalInclude( 'hf_header', 'hf-header', $name, $parserOutput );
