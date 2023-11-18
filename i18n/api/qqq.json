@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": []
+	},
+	"apihelp-getheaderfooter-description": "{{Doc-apihelp-summary}}",
+	"apihelp-getheaderfooter-summary": "{{Doc-apihelp-summary}}",
+	"apihelp-getheaderfooter-param-contexttitle": "{{Doc-apihelp-summary}}",
+	"apihelp-getheaderfooter-param-messageid": "{{Doc-apihelp-summary}}",
+	"apihelp-getheaderfooter-example-1": "{{Doc-apihelp-summary}}"
+}
