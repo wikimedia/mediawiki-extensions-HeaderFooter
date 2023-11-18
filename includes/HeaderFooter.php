@@ -2,17 +2,16 @@
 /**
  * @package HeaderFooter
  */
-class HeaderFooter
-{
+class HeaderFooter {
 	/**
 	 * Main Hook
-	 * @param OutputPage $op
+	 * @param OutputPage &$op
 	 * @param ParserOutput $parserOutput
+	 * @return bool
 	 */
 	public static function hOutputPageParserOutput( &$op, $parserOutput ) {
-
-		$action = $op->getRequest()->getVal("action");
-		if ( ($action == 'edit') || ($action == 'submit') || ($action == 'history') ) {
+		$action = $op->getRequest()->getVal( "action" );
+		if ( ( $action == 'edit' ) || ( $action == 'submit' ) || ( $action == 'history' ) ) {
 			return true;
 		}
 
@@ -37,6 +36,9 @@ class HeaderFooter
 		return true;
 	}
 
+	/**
+	 * @param string &$doubleUnderscoreIDs
+	 */
 	public static function onGetDoubleUnderscoreIDs( &$doubleUnderscoreIDs ) {
 		$doubleUnderscoreIDs[] = 'hf_nsheader';
 		$doubleUnderscoreIDs[] = 'hf_header';
@@ -46,13 +48,20 @@ class HeaderFooter
 
 	/**
 	 * Verifies & Strips ''disable command'', returns $content if all OK.
+	 *
+	 * @param string $disableWord
+	 * @param string $class
+	 * @param string $unique
+	 * @param ParserOutput $parserOutput
+	 * @return null|string
 	 */
-	static function conditionalInclude( $disableWord, $class, $unique, $parser ) {
-		if ( $parser->getPageProperty( $disableWord ) !== null ) {
+	public static function conditionalInclude( $disableWord, $class, $unique, $parserOutput ) {
+		if ( $parserOutput->getPageProperty( $disableWord ) !== null ) {
 			return null;
 		}
 
-		$msgId = "$class-$unique"; // also HTML ID
+		$msgId = "$class-$unique";
+		// also HTML ID
 		$div = "<div class='$class' id='$msgId'>";
 
 		global $egHeaderFooterEnableAsyncHeader, $egHeaderFooterEnableAsyncFooter;
@@ -66,8 +75,7 @@ class HeaderFooter
 			// Just drop an empty div into the page. Will fill it with async
 			// request after page load
 			return $div . '</div>';
-		}
-		else {
+		} else {
 			$msgText = wfMessage( $msgId )->parse();
 
 			// don't need to bother if there is no content.
@@ -83,7 +91,11 @@ class HeaderFooter
 		}
 	}
 
-	public static function onResourceLoaderGetConfigVars ( array &$vars ) {
+	/**
+	 * @param array &$vars
+	 * @return true
+	 */
+	public static function onResourceLoaderGetConfigVars( array &$vars ) {
 		global $egHeaderFooterEnableAsyncHeader, $egHeaderFooterEnableAsyncFooter;
 
 		$vars['egHeaderFooter'] = [

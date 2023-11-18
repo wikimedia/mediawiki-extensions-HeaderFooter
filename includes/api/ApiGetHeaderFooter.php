@@ -7,8 +7,8 @@
  * @since Version 3.0
  */
 
-use Wikimedia\ParamValidator\ParamValidator;
 use MediaWiki\MediaWikiServices;
+use Wikimedia\ParamValidator\ParamValidator;
 
 /**
  * API module to review revisions
@@ -16,10 +16,9 @@ use MediaWiki\MediaWikiServices;
 class ApiGetHeaderFooter extends ApiBase {
 
 	public function execute() {
-
 		$params = $this->extractRequestParams();
 		$contextTitle = Title::newFromDBkey( $params['contexttitle'] );
-		if ( ! $contextTitle ) {
+		if ( !$contextTitle ) {
 			$this->dieWithError( "Not a valid contexttitle.", 'notarget' );
 		}
 
@@ -42,31 +41,29 @@ class ApiGetHeaderFooter extends ApiBase {
 			ParserOptions::newFromUser( $this->getUser() )
 		)->getText();
 
-		$this->getResult()->addValue( null, $this->getModuleName(), array( 'result' => $messageText ) );
-
+		$this->getResult()->addValue( null, $this->getModuleName(), [ 'result' => $messageText ] );
 	}
 
+	/** @inheritDoc */
 	public function getAllowedParams() {
-		return array(
-			'contexttitle' => array(
+		return [
+			'contexttitle' => [
 				ParamValidator::PARAM_REQUIRED => true,
 				ParamValidator::PARAM_TYPE => 'string'
-			),
-			'messageid' => array(
+			],
+			'messageid' => [
 				ParamValidator::PARAM_REQUIRED => true,
 				ParamValidator::PARAM_TYPE => 'string'
-			)
-		);
+			]
+		];
 	}
 
-	/**
-	 * @see ApiBase::getExamplesMessages()
-	 */
+	/** @inheritDoc */
 	protected function getExamplesMessages() {
-		return array(
+		return [
 			'action=getheaderfooter&contexttitle=Main_Page&messageid=Hf-nsfooter-'
 				=> 'apihelp-getheaderfooter-example-1',
-		);
+		];
 	}
 
 	public function mustBePosted() {
