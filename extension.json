@@ -45,7 +45,7 @@
 		"EnableAsyncHeader": {
 			"value": false
 		},
-		"EnableAsyncFooter":  {
+		"EnableAsyncFooter": {
 			"value": false
 		}
 	},
