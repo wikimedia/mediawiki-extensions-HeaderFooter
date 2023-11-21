@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": []
+	},
+	"apihelp-getheaderfooter-description": "Abrufen der geparsten Ausgabe einer Kopf- oder Fußzeile im Kontext einer bestimmten Seite.",
+	"apihelp-getheaderfooter-summary": "Ruft die geparste Ausgabe einer Kopf- oder Fußzeile im Kontext einer bestimmten Seite ab.",
+	"apihelp-getheaderfooter-param-contexttitle": "Der Titel der Seite, zu der die Kopf- oder Fußzeile hinzugefügt wird.",
+	"apihelp-getheaderfooter-param-messageid": "Welche Kopf- oder Fußzeile wird angefordert (z. B. ein Namensraum-Kopf)",
+	"apihelp-getheaderfooter-example-1": "Ruft die NS_MAIN-Fußzeile für die Hauptseite ab"
+}

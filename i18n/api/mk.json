@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Bjankuloski06"
+		]
+	},
+	"apihelp-getheaderfooter-description": "Добијте го расчленетиот извод од заглавие или подножје во контекст на извесна страница.",
+	"apihelp-getheaderfooter-summary": "Добијте го расчленетиот извод од заглавие или подножје во контекст на извесна страница.",
+	"apihelp-getheaderfooter-param-contexttitle": "Наслов на страницата во која додавате заглавие или подножје.",
+	"apihelp-getheaderfooter-param-messageid": "Кое заглавие или подножје го барате (на пр. на именскиот простор)",
+	"apihelp-getheaderfooter-example-1": "Дај подножје NS_MAIN за Главната страница"
+}

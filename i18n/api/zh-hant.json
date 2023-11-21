@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Kly"
+		]
+	},
+	"apihelp-getheaderfooter-description": "檢索特定頁面上下文裡頁首或頁尾的解析輸出。",
+	"apihelp-getheaderfooter-summary": "檢索特定頁面上下文裡頁首或頁尾的解析輸出。",
+	"apihelp-getheaderfooter-param-contexttitle": "頁首或頁尾要新增的頁面標題。",
+	"apihelp-getheaderfooter-param-messageid": "要請求哪個頁首或頁尾（例如：命名空間頁首）",
+	"apihelp-getheaderfooter-example-1": "取得主頁的 NS_MAIN 頁尾"
+}

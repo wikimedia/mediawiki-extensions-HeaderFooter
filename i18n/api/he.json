@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Amire80"
+		]
+	},
+	"apihelp-getheaderfooter-description": "לאחזר את הפלט המפוענח של הכותרת העליונה או התחתונה בהקשר של דף מסוים.",
+	"apihelp-getheaderfooter-summary": "לאחזר את הפלט המפוענח של הכותרת העליונה או התחתונה בהקשר של דף מסוים.",
+	"apihelp-getheaderfooter-param-contexttitle": "כותרת הדף שסמוסיפים את הכותרת העליונה או התחתונה.",
+	"apihelp-getheaderfooter-param-messageid": "איזו כותרת עליונה או תחתונה מתבקשת (למשל כותרת עליונה של מרחב שם)",
+	"apihelp-getheaderfooter-example-1": "קבלת הכותרת התחתונה של NS_MAIN עבור העמוד הראשי"
+}

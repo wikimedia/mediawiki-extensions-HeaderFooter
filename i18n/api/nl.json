@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"McDutchie"
+		]
+	},
+	"apihelp-getheaderfooter-description": "De verwerkte uitvoer van een kop- of voettekst ophalen in de context van een bepaalde pagina.",
+	"apihelp-getheaderfooter-summary": "De verwerkte uitvoer van een kop- of voettekst ophalen in de context van een bepaalde pagina.",
+	"apihelp-getheaderfooter-param-contexttitle": "De titel van de pagina waaraan de kop- of voettekst wordt toegevoegd.",
+	"apihelp-getheaderfooter-param-messageid": "Welke kop- of voettekst wordt opgevraagd (bijvoorbeeld een naamruimtekop)",
+	"apihelp-getheaderfooter-example-1": "Haal de NS_MAIN-voettekst voor de hoofdpagina op"
+}
