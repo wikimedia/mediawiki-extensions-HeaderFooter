@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"McDutchie"
+		]
+	},
+	"apihelp-getheaderfooter-description": "Recuperar le sortita processate de un capite o pede in le contexto de un certe pagina.",
+	"apihelp-getheaderfooter-summary": "Recuperar le sortita processate de un capite o pede in le contexto de un certe pagina.",
+	"apihelp-getheaderfooter-param-contexttitle": "Le titulo del pagina al qual se adde le capite o pede.",
+	"apihelp-getheaderfooter-param-messageid": "Qual capite o pede se requesta (p.ex. un capite de spatio de nomines)",
+	"apihelp-getheaderfooter-example-1": "Obtener le pede NS_MAIN pro Main Page"
+}
