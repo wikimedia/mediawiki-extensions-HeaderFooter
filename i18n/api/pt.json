@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Caiofernandes"
+		]
+	},
+	"apihelp-getheaderfooter-description": "Recuperar a saída analisada de um cabeçalho ou rodapé no contexto de uma determinada página.",
+	"apihelp-getheaderfooter-summary": "Recuperar a saída analisada de um cabeçalho ou rodapé no contexto de uma determinada página.",
+	"apihelp-getheaderfooter-param-contexttitle": "O título da página à qual o cabeçalho ou rodapé está sendo adicionado.",
+	"apihelp-getheaderfooter-param-messageid": "Qual cabeçalho ou rodapé está sendo solicitado (por exemplo, um cabeçalho de namespace)"
+}
