@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Hamza DK"
+		]
+	},
+	"apihelp-getheaderfooter-description": "Maido da abin da aka fake na kan kai ko ƙafa a cikin mahallin wani shafi.",
+	"apihelp-getheaderfooter-summary": "Maido da abin da aka fake na kan kai ko ƙafa a cikin mahallin wani shafi.",
+	"apihelp-getheaderfooter-param-contexttitle": "Taken shafin da ake ƙara taken ko ƙafar a ciki.",
+	"apihelp-getheaderfooter-param-messageid": "Wanne kanne ko ƙafa ake nema (misali sunan saƙon suna)"
+}
