@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Eleassar"
+		]
+	},
+	"apihelp-getheaderfooter-description": "Pridobi razčlenjen izpis glave ali noge v kontekstu določene strani.",
+	"apihelp-getheaderfooter-summary": "Pridobi razčlenjen izpis glave ali noge v kontekstu določene strani.",
+	"apihelp-getheaderfooter-param-contexttitle": "Naslov strani, ki ji je dodana glava ali noga.",
+	"apihelp-getheaderfooter-param-messageid": "Katera glava ali noga je zahtevana (npr. glava imenskega prostora)",
+	"apihelp-getheaderfooter-example-1": "Pridobi nogo NS_MAIN za glavno stran"
+}
