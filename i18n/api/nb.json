@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Jon Harald Søby"
+		]
+	},
+	"apihelp-getheaderfooter-description": "Hent det tolkede innholdet til en topp- eller bunntekst i konteksten av en bestemt side.",
+	"apihelp-getheaderfooter-summary": "Hent det tolkede resultatet av en topp- eller bunntekst i konteksten av en bestemt side.",
+	"apihelp-getheaderfooter-param-contexttitle": "Tittelen på siden topp- eller bunnteksten legges til på.",
+	"apihelp-getheaderfooter-param-messageid": "Hvilken topp- eller bunntekst det bes om (f.eks. en navneromstopptekst)",
+	"apihelp-getheaderfooter-example-1": "Hent NS_MAIN-bunnteksten for hovedsiden"
+}
