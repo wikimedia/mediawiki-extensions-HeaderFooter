@@ -1,10 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"ANTHONY DERY"
+			"ANTHONY DERY",
+			"Amire80"
 		]
 	},
-	"apihelp-getheaderfooter-description": "Leɛ de a yelbulo  zu bee a baaroo a Pagyi kaŋa yelboɔraa",
+	"apihelp-getheaderfooter-description": "Leɛ de a yelbulo zu bee a baaroo a Pagyi kaŋa yelboɔraa",
 	"apihelp-getheaderfooter-summary": "Leɛ de a yelbulo zu bee baaroo a pagyi kaŋa yelboɔra",
 	"apihelp-getheaderfooter-param-contexttitle": "A pagyi piiluu naŋ e a yelzu bee baaroo paale la.",
 	"apihelp-getheaderfooter-param-messageid": "Yelzu bee baaroo boɔbo la (aseŋ: a yuori vuo yelzu)",
