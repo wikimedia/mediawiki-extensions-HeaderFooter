@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Mahabarata"
+		]
+	},
+	"apihelp-getheaderfooter-description": "Récupérer la sortie analysée d'un en-tête ou d'un pied de page dans le contexte d'une certaine page.",
+	"apihelp-getheaderfooter-summary": "Récupérer la sortie analysée d'un en-tête ou d'un pied de page dans le contexte d'une certaine page.",
+	"apihelp-getheaderfooter-param-contexttitle": "Le titre de la page à laquelle l'en-tête ou le pied de page est ajouté.",
+	"apihelp-getheaderfooter-param-messageid": "Quel en-tête ou pied de page est demandé (par exemple, un en-tête d'espace de noms)",
+	"apihelp-getheaderfooter-example-1": "Obtenir le pied de page NS_MAIN pour la page principale"
+}
