@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Meno25"
+		]
+	},
+	"apihelp-getheaderfooter-description": "استرداد الناتج المحلل لرأس أو تذييل الصفحة في سياق صفحة معينة.",
+	"apihelp-getheaderfooter-summary": "استرداد الناتج المحلل لرأس أو تذييل الصفحة في سياق صفحة معينة.",
+	"apihelp-getheaderfooter-param-contexttitle": "عنوان الصفحة التي تتم إضافة الرأس أو التذييل إليها.",
+	"apihelp-getheaderfooter-param-messageid": "ما هو الرأس أو التذييل المطلوب (على سبيل المثال رأس مساحة الاسم)",
+	"apihelp-getheaderfooter-example-1": "احصل على تذييل NS_MAIN للصفحة الرئيسية"
+}
