@@ -1,45 +1,41 @@
 <?php
+
+use MediaWiki\Parser\ParserOutput;
+
 /**
  * @package HeaderFooter
  */
 class HeaderFooter {
-	/**
-	 * Main Hook
-	 * @param OutputPage &$op
-	 * @param ParserOutput $parserOutput
-	 * @return bool
-	 */
-	public static function hOutputPageParserOutput( &$op, $parserOutput ) {
-		$action = $op->getRequest()->getVal( "action" );
+
+	public static function onBeforePageDisplay( OutputPage $out, Skin $skin ): void {
+		$action = $out->getRequest()->getVal( "action" );
 		if ( ( $action == 'edit' ) || ( $action == 'submit' ) || ( $action == 'history' ) ) {
-			return true;
+			return;
 		}
 
-		$title = $op->getTitle();
+		$title = $out->getTitle();
 		$ns = $title->getNsText();
 		$name = $title->getPrefixedDBKey();
+		$meta = $out->getMetadata();
 
-		$nsheader = self::conditionalInclude( 'hf_nsheader', 'hf-nsheader', $ns, $parserOutput );
-		$header   = self::conditionalInclude( 'hf_header', 'hf-header', $name, $parserOutput );
-		$footer   = self::conditionalInclude( 'hf_footer', 'hf-footer', $name, $parserOutput );
-		$nsfooter = self::conditionalInclude( 'hf_nsfooter', 'hf-nsfooter', $ns, $parserOutput );
+		$nsheader = self::conditionalInclude( 'hf_nsheader', 'hf-nsheader', $ns, $meta );
+		$header   = self::conditionalInclude( 'hf_header', 'hf-header', $name, $meta );
+		$footer   = self::conditionalInclude( 'hf_footer', 'hf-footer', $name, $meta );
+		$nsfooter = self::conditionalInclude( 'hf_nsfooter', 'hf-nsfooter', $ns, $meta );
 
-		// Grab only raw text to prevent doubled parser-output class
-		$text = $parserOutput->getRawText();
-		$parserOutput->setText( $nsheader . $header . $text . $footer . $nsfooter );
+		$text = $out->mBodytext;
+		$out->mBodytext = $nsheader . $header . $text . $footer . $nsfooter;
 
 		global $egHeaderFooterEnableAsyncHeader, $egHeaderFooterEnableAsyncFooter;
 		if ( $egHeaderFooterEnableAsyncFooter || $egHeaderFooterEnableAsyncHeader ) {
-			$op->addModules( 'ext.headerfooter.dynamicload' );
+			$out->addModules( 'ext.headerfooter.dynamicload' );
 		}
-
-		return true;
 	}
 
 	/**
-	 * @param string &$doubleUnderscoreIDs
+	 * @param string[] &$doubleUnderscoreIDs
 	 */
-	public static function onGetDoubleUnderscoreIDs( &$doubleUnderscoreIDs ) {
+	public static function onGetDoubleUnderscoreIDs( array &$doubleUnderscoreIDs ): void {
 		$doubleUnderscoreIDs[] = 'hf_nsheader';
 		$doubleUnderscoreIDs[] = 'hf_header';
 		$doubleUnderscoreIDs[] = 'hf_footer';
@@ -52,11 +48,12 @@ class HeaderFooter {
 	 * @param string $disableWord
 	 * @param string $class
 	 * @param string $unique
-	 * @param ParserOutput $parserOutput
+	 * @param ParserOutput $meta
 	 * @return null|string
 	 */
-	public static function conditionalInclude( $disableWord, $class, $unique, $parserOutput ) {
-		if ( $parserOutput->getPageProperty( $disableWord ) !== null ) {
+	public static function conditionalInclude( string $disableWord, string $class, string $unique, ParserOutput $meta ):
+	?string {
+		if ( $meta->getPageProperty( $disableWord ) !== null ) {
 			return null;
 		}
 
@@ -70,7 +67,7 @@ class HeaderFooter {
 		$isFooter = $class === 'hf-nsfooter' || $class === 'hf-footer';
 
 		if ( ( $egHeaderFooterEnableAsyncFooter && $isFooter )
-			|| ( $egHeaderFooterEnableAsyncHeader && $isHeader ) ) {
+			 || ( $egHeaderFooterEnableAsyncHeader && $isHeader ) ) {
 
 			// Just drop an empty div into the page. Will fill it with async
 			// request after page load
@@ -91,19 +88,12 @@ class HeaderFooter {
 		}
 	}
 
-	/**
-	 * @param array &$vars
-	 * @return true
-	 */
-	public static function onResourceLoaderGetConfigVars( array &$vars ) {
+	public static function onResourceLoaderGetConfigVars( array &$vars ): void {
 		global $egHeaderFooterEnableAsyncHeader, $egHeaderFooterEnableAsyncFooter;
 
 		$vars['egHeaderFooter'] = [
 			'enableAsyncHeader' => $egHeaderFooterEnableAsyncHeader,
 			'enableAsyncFooter' => $egHeaderFooterEnableAsyncFooter,
 		];
-
-		return true;
 	}
-
 }

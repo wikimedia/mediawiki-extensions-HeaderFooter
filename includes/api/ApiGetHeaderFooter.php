@@ -7,14 +7,17 @@
  * @since Version 3.0
  */
 
+use MediaWiki\Api\ApiUsageException;
 use MediaWiki\MediaWikiServices;
 use Wikimedia\ParamValidator\ParamValidator;
-
 /**
  * API module to review revisions
  */
 class ApiGetHeaderFooter extends ApiBase {
 
+	/**
+	 * @throws ApiUsageException
+	 */
 	public function execute() {
 		$params = $this->extractRequestParams();
 		$contextTitle = Title::newFromDBkey( $params['contexttitle'] );
@@ -24,7 +27,7 @@ class ApiGetHeaderFooter extends ApiBase {
 
 		$messageId = $params['messageid'];
 
-		$messageText = wfMessage( $messageId )->title( $contextTitle )->text();
+		$messageText = wfMessage( $messageId )->page( $contextTitle )->text();
 
 		// don't need to bother if there is no content.
 		if ( empty( $messageText ) ) {
@@ -45,7 +48,7 @@ class ApiGetHeaderFooter extends ApiBase {
 	}
 
 	/** @inheritDoc */
-	public function getAllowedParams() {
+	public function getAllowedParams(): array {
 		return [
 			'contexttitle' => [
 				ParamValidator::PARAM_REQUIRED => true,
@@ -59,18 +62,18 @@ class ApiGetHeaderFooter extends ApiBase {
 	}
 
 	/** @inheritDoc */
-	protected function getExamplesMessages() {
+	protected function getExamplesMessages(): array {
 		return [
 			'action=getheaderfooter&contexttitle=Main_Page&messageid=Hf-nsfooter-'
 				=> 'apihelp-getheaderfooter-example-1',
 		];
 	}
 
-	public function mustBePosted() {
+	public function mustBePosted(): bool {
 		return false;
 	}
 
-	public function isWriteMode() {
+	public function isWriteMode(): bool {
 		return false;
 	}
 
