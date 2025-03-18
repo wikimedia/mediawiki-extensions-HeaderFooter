@@ -7,6 +7,7 @@
  * @since Version 3.0
  */
 
+use MediaWiki\Api\ApiBase;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Parser\ParserOptions;
 use MediaWiki\Title\Title;
