@@ -1,7 +1,12 @@
 {
 	"name": "HeaderFooter",
 	"version": "4.0.0",
-	"author": "Jean-Lou Dupont, James Montalvo, Douglas Mason",
+	"author": [
+		"Jean-Lou Dupont",
+		"James Montalvo",
+		"Douglas Mason",
+		"[https://www.hallowelt.com Hallo Welt! GmbH]"
+	],
 	"url": "https://www.mediawiki.org/wiki/Extension:HeaderFooter",
 	"descriptionmsg": "headerfooter-desc",
 	"type": "other",
