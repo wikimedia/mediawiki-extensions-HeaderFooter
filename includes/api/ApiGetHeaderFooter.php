@@ -27,14 +27,14 @@ class ApiGetHeaderFooter extends ApiBase {
 
 		$messageId = $params['messageid'];
 
-		$messageText = wfMessage( $messageId )->title( $contextTitle )->text();
+		$messageText = $this->msg( $messageId )->page( $contextTitle )->text();
 
 		// don't need to bother if there is no content.
 		if ( empty( $messageText ) ) {
 			$messageText = '';
 		}
 
-		if ( wfMessage( $messageId )->inContentLanguage()->isBlank() ) {
+		if ( $this->msg( $messageId )->inContentLanguage()->isBlank() ) {
 			$messageText = '';
 		}
 
@@ -69,10 +69,12 @@ class ApiGetHeaderFooter extends ApiBase {
 		];
 	}
 
+	/** @inheritDoc */
 	public function mustBePosted() {
 		return false;
 	}
 
+	/** @inheritDoc */
 	public function isWriteMode() {
 		return false;
 	}

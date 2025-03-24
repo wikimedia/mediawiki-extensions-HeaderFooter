@@ -13,17 +13,30 @@
 	"requires": {
 		"MediaWiki": ">= 1.43.0"
 	},
+	"AutoloadNamespaces": {
+		"MediaWiki\\Extension\\HeaderFooter\\": "src/"
+	},
 	"AutoloadClasses": {
-		"HeaderFooter": "includes/HeaderFooter.php",
 		"ApiGetHeaderFooter": "includes/api/ApiGetHeaderFooter.php"
 	},
 	"APIModules": {
 		"getheaderfooter": "ApiGetHeaderFooter"
 	},
+	"HookHandlers": {
+		"addHeaderFooter": {
+			"class": "MediaWiki\\Extension\\HeaderFooter\\HookHandler\\AddHeaderFooter"
+		},
+		"addMagicWords": {
+			"class": "MediaWiki\\Extension\\HeaderFooter\\HookHandler\\AddMagicWords"
+		},
+		"addConfigVars": {
+			"class": "MediaWiki\\Extension\\HeaderFooter\\HookHandler\\AddConfigVars"
+		}
+	},
 	"Hooks": {
-		"OutputPageParserOutput": "HeaderFooter::hOutputPageParserOutput",
-		"ResourceLoaderGetConfigVars": "HeaderFooter::onResourceLoaderGetConfigVars",
-		"GetDoubleUnderscoreIDs": "HeaderFooter::onGetDoubleUnderscoreIDs"
+		"ContentAlterParserOutput": "addHeaderFooter",
+		"GetDoubleUnderscoreIDs": "addMagicWords",
+		"ResourceLoaderGetConfigVars": "addConfigVars"
 	},
 	"MessagesDirs": {
 		"HeaderFooter": [
