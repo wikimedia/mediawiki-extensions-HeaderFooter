@@ -17,6 +17,13 @@ class AddHeaderFooter implements ContentAlterParserOutputHook {
 		if ( $action !== 'view' ) {
 			return;
 		}
+		$request = $context->getRequest();
+		if ( $request->getVal( 'format' ) === 'json' ) {
+			return;
+		}
+		if ( !$parserOutput->hasText() ) {
+			return;
+		}
 
 		$ns = $title->getNsText();
 		$name = $title->getPrefixedDBKey();
@@ -26,12 +33,7 @@ class AddHeaderFooter implements ContentAlterParserOutputHook {
 		$footer   = $this->generateHeaderFooter( 'hf_footer', 'hf-footer', $name, $parserOutput );
 		$nsfooter = $this->generateHeaderFooter( 'hf_nsfooter', 'hf-nsfooter', $ns, $parserOutput );
 
-		try {
-			$text = $parserOutput->getRawText();
-		} catch ( \Throwable $e ) {
-			return;
-		}
-
+		$text = $parserOutput->getRawText();
 		$parserOutput->setRawText( $nsheader . $header . $text . $footer . $nsfooter );
 
 		global $egHeaderFooterEnableAsyncHeader, $egHeaderFooterEnableAsyncFooter;
