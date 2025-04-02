@@ -48,8 +48,8 @@
 		"HeaderFooterMagic": "languages/HeaderFooter.i18n.magic.php"
 	},
 	"ResourceFileModulePaths": {
-		"localBasePath": "modules",
-		"remoteExtPath": "HeaderFooter/modules"
+		"localBasePath": "resources",
+		"remoteExtPath": "HeaderFooter/resources"
 	},
 	"ResourceModules": {
 		"ext.headerfooter.dynamicload": {
