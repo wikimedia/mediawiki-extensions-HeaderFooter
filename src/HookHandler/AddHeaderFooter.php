@@ -17,8 +17,7 @@ class AddHeaderFooter implements ContentAlterParserOutputHook {
 		if ( $action !== 'view' ) {
 			return;
 		}
-		$request = $context->getRequest();
-		if ( $request->getVal( 'format' ) === 'json' ) {
+		if ( MW_ENTRY_POINT === 'api' ) {
 			return;
 		}
 		if ( !$parserOutput->hasText() ) {
