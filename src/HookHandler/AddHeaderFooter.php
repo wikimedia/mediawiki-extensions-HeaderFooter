@@ -9,18 +9,29 @@ use MediaWiki\Parser\ParserOutput;
 class AddHeaderFooter implements ContentAlterParserOutputHook {
 
 	/**
+	 * @param RequestContext $context
+	 * @param ParserOutput $parserOutput
+	 * @return bool
+	 */
+	private function shouldSkip( $context, $parserOutput ): bool {
+		if (
+			$context->getActionName() !== 'view' ||
+			MW_ENTRY_POINT === 'api' ||
+			$parserOutput->getExtensionData( 'HeaderFooter-added' ) ||
+			!$parserOutput->hasText()
+		) {
+			return true;
+		}
+
+		return false;
+	}
+
+	/**
 	 * @inheritDoc
 	 */
 	public function onContentAlterParserOutput( $content, $title, $parserOutput ) {
 		$context = RequestContext::getMain();
-		$action = $context->getActionName();
-		if ( $action !== 'view' ) {
-			return;
-		}
-		if ( MW_ENTRY_POINT === 'api' ) {
-			return;
-		}
-		if ( !$parserOutput->hasText() ) {
+		if ( $this->shouldSkip( $context, $parserOutput ) ) {
 			return;
 		}
 
@@ -34,6 +45,7 @@ class AddHeaderFooter implements ContentAlterParserOutputHook {
 
 		$text = $parserOutput->getRawText();
 		$parserOutput->setRawText( $nsheader . $header . $text . $footer . $nsfooter );
+		$parserOutput->setExtensionData( 'HeaderFooter-added', true );
 
 		global $egHeaderFooterEnableAsyncHeader, $egHeaderFooterEnableAsyncFooter;
 		if ( $egHeaderFooterEnableAsyncFooter || $egHeaderFooterEnableAsyncHeader ) {
