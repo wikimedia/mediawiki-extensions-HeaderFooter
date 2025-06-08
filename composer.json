@@ -29,5 +29,10 @@
 	},
 	"require": {
 		"composer/installers": ">=1.0.1|~2"
+	},
+	"config": {
+		"allow-plugins": {
+			"composer/installers": true
+		}
 	}
 }
