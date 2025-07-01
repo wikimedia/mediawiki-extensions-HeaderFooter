@@ -21,6 +21,11 @@
 		{
 			"name": "James Montalvo",
 			"role": "Current developer"
+		},
+		{
+			"name": "Hallo Welt! GmbH",
+			"email": "info@hallowelt.com",
+			"homepage": "https://www.hallowelt.com"
 		}
 	],
 	"support": {
