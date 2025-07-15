@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Toliño"
+		]
+	},
+	"apihelp-getheaderfooter-description": "Recuperar a saída analizada dunha cabeceira ou dun pé de páxina no contexto dunha determinada páxina.",
+	"apihelp-getheaderfooter-summary": "Recuperar a saída analizada dunha cabeceira ou dun pé de páxina no contexto dunha determinada páxina.",
+	"apihelp-getheaderfooter-param-contexttitle": "O título da páxina á que se lle engade a cabeceira ou o pé de páxina.",
+	"apihelp-getheaderfooter-param-messageid": "Que cabeceira ou pé de páxina se solicita (por exemplo, unha cabeceira de espazo de nomes)",
+	"apihelp-getheaderfooter-example-1": "Obter o pé de páxina NS_MAIN para a páxina principal"
+}
