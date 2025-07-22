@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"JeffreyKim"
+		]
+	},
+	"apihelp-getheaderfooter-description": "喺某個頁面嘅上下文入面擷取頁首或者頁尾嘅解析輸出。",
+	"apihelp-getheaderfooter-summary": "喺某個頁面嘅上下文入面擷取頁首或者頁尾嘅解析輸出。",
+	"apihelp-getheaderfooter-param-contexttitle": "加緊頁首或者頁尾嘅頁面標題。",
+	"apihelp-getheaderfooter-param-messageid": "要求緊邊個頁首或者頁尾（例如命名空間標題）",
+	"apihelp-getheaderfooter-example-1": "攞主頁嘅 NS_MAIN 頁尾"
+}
