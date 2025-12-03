@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Peterxy12"
+		]
+	},
+	"apihelp-getheaderfooter-description": "检索特定页面上下文里页眉或页脚的解析输出。",
+	"apihelp-getheaderfooter-summary": "检索特定页面上下文里页眉或页脚的解析输出。"
+}
