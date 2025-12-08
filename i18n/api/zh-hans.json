@@ -5,5 +5,8 @@
 		]
 	},
 	"apihelp-getheaderfooter-description": "检索特定页面上下文里页眉或页脚的解析输出。",
-	"apihelp-getheaderfooter-summary": "检索特定页面上下文里页眉或页脚的解析输出。"
+	"apihelp-getheaderfooter-summary": "检索特定页面上下文里页眉或页脚的解析输出。",
+	"apihelp-getheaderfooter-param-contexttitle": "页眉或页脚要新增的页面标题。",
+	"apihelp-getheaderfooter-param-messageid": "要请求哪个页眉或页脚（例如：命名空间页眉）",
+	"apihelp-getheaderfooter-example-1": "取得主页的NS_MAIN页脚"
 }
