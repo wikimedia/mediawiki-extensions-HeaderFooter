@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Tensama0415"
+		]
+	},
+	"apihelp-getheaderfooter-description": "특정 문서의 컨텍스트에서 머리글 또는 바닥글의 구문 분석된 출력을 가져옵니다.",
+	"apihelp-getheaderfooter-summary": "특정 문서의 컨텍스트에서 머리글 또는 바닥글의 구문 분석된 출력을 가져옵니다.",
+	"apihelp-getheaderfooter-param-contexttitle": "머리글이나 바닥글이 추가될 문서의 제목입니다.",
+	"apihelp-getheaderfooter-param-messageid": "요청될 머리글이나 바닥글의 종류 (예: 이름공간 머리글)",
+	"apihelp-getheaderfooter-example-1": "대문의 NS_MAIN 바닥글을 가져옵니다"
+}
