@@ -44,7 +44,7 @@ class AddHeaderFooter implements ContentAlterParserOutputHook {
 		$nsfooter = $this->generateHeaderFooter( 'hf_nsfooter', 'hf-nsfooter', $ns, $parserOutput );
 
 		$text = $parserOutput->getRawText();
-		$parserOutput->setRawText( $nsheader . $header . $text . $footer . $nsfooter );
+		$parserOutput->setContentHolderText( $nsheader . $header . $text . $footer . $nsfooter );
 		$parserOutput->setExtensionData( 'HeaderFooter-added', true );
 
 		global $egHeaderFooterEnableAsyncHeader, $egHeaderFooterEnableAsyncFooter;
