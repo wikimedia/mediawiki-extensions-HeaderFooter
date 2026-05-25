@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"AhmedG612"
+		]
+	},
+	"apihelp-getheaderfooter-description": "Soo hel natiijada la falanqeeyay ee madaxa ama lugta iyadoo lagu salaynayo macnaha bog gaar ah.",
+	"apihelp-getheaderfooter-summary": "Soo hel natiijada la falanqeeyay ee madaxa ama qaybta hoose ee ku xiran bog gaar ah.",
+	"apihelp-getheaderfooter-param-contexttitle": "Cinwaanka bogga lagu darayo madaxa ama qaybta hoose.",
+	"apihelp-getheaderfooter-param-messageid": "Madaxa ama qaybta hoose ee la codsanayo (tusaale: madaxa meel-magac)",
+	"apihelp-getheaderfooter-example-1": "Soo hel NS_MAIN footer ee Bogga Hore"
+}
