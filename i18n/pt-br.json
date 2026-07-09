@@ -1,8 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
+			"EGobi",
 			"Eduardoaddad"
 		]
 	},
-	"headerfooter-desc": "Ativa cabeçalhos e rodapés por página/por namespace"
+	"headerfooter-desc": "Ativa cabeçalhos e rodapés por página ou espaço nominal"
 }
