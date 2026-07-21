@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"شاه زمان پټان"
+		]
+	},
+	"apihelp-getheaderfooter-description": "د يو ځانگړي مخ په شرايطو کې د سرليک يا پای‌ليک ارزول شوي محصول بياترلاسنه.",
+	"apihelp-getheaderfooter-summary": "د يو ځانگړي مخ په شرايطو کې د سرليک يا پای‌ليک ارزول شوي محصول بياترلاسنه.",
+	"apihelp-getheaderfooter-param-contexttitle": "د هغه مخ سرليک چې سرليک يا پای‌ليک پکې ورگډېږي.",
+	"apihelp-getheaderfooter-param-messageid": "د کوم سرليک يا پای‌ليک غوښتنه کېږي (د بېلگې په توگه د نوم‌تشيال سرليک)",
+	"apihelp-getheaderfooter-example-1": "NS_MAIN پای‌ليک د ار مخ لپاره ترلاسه کړئ"
+}
