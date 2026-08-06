@@ -8,5 +8,7 @@
 	"parserOptions": {
 		"sourceType": "commonjs"
 	},
-	"rules": {}
+	"rules": {
+		"no-jquery/no-jquery-ui": "warn"
+	}
 }
