@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Wizzard"
+		]
+	},
+	"apihelp-getheaderfooter-description": "Získať spracovaný výstup hlavičky alebo päty v kontexte určitej stránky.",
+	"apihelp-getheaderfooter-summary": "Získať spracovaný výstup hlavičky alebo päty v kontexte určitej stránky.",
+	"apihelp-getheaderfooter-param-contexttitle": "Názov stránky, na ktorú sa hlavička alebo päta pridáva.",
+	"apihelp-getheaderfooter-param-messageid": "Ktorá hlavička alebo päta sa požaduje (napríklad hlavička menného priestoru)",
+	"apihelp-getheaderfooter-example-1": "Získať pätu NS_MAIN pre hlavnú stránku"
+}
