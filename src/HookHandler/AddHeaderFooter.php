@@ -5,6 +5,7 @@ namespace MediaWiki\Extension\HeaderFooter\HookHandler;
 use MediaWiki\Content\Hook\ContentAlterParserOutputHook;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Parser\ParserOutput;
+use MediaWiki\Title\Title;
 
 class AddHeaderFooter implements ContentAlterParserOutputHook {
 
@@ -38,10 +39,10 @@ class AddHeaderFooter implements ContentAlterParserOutputHook {
 		$ns = $title->getNsText();
 		$name = $title->getPrefixedDBKey();
 
-		$nsheader = $this->generateHeaderFooter( 'hf_nsheader', 'hf-nsheader', $ns, $parserOutput );
-		$header   = $this->generateHeaderFooter( 'hf_header', 'hf-header', $name, $parserOutput );
-		$footer   = $this->generateHeaderFooter( 'hf_footer', 'hf-footer', $name, $parserOutput );
-		$nsfooter = $this->generateHeaderFooter( 'hf_nsfooter', 'hf-nsfooter', $ns, $parserOutput );
+		$nsheader = $this->generateHeaderFooter( 'hf_nsheader', 'hf-nsheader', $ns, $parserOutput, $title );
+		$header   = $this->generateHeaderFooter( 'hf_header', 'hf-header', $name, $parserOutput, $title );
+		$footer   = $this->generateHeaderFooter( 'hf_footer', 'hf-footer', $name, $parserOutput, $title );
+		$nsfooter = $this->generateHeaderFooter( 'hf_nsfooter', 'hf-nsfooter', $ns, $parserOutput, $title );
 
 		$text = $parserOutput->getRawText();
 		$parserOutput->setRawText( $nsheader . $header . $text . $footer . $nsfooter );
@@ -60,9 +61,16 @@ class AddHeaderFooter implements ContentAlterParserOutputHook {
 	 * @param string $hfType Type of Header/Footer
 	 * @param string $pageIdentifier Namespace or prefixed title
 	 * @param ParserOutput $parserOutput
+	 * @param Title $title Title of the page being rendered, used as parsing
+	 *  context so magic words like {{FULLPAGENAME}} and parser functions like
+	 *  {{#show:}} resolve relative to the actual page instead of falling back
+	 *  to the (possibly unset) global $wgTitle, which is not reliably set
+	 *  outside of classic index.php page views (e.g. REST API based exports).
 	 * @return string
 	 */
-	private function generateHeaderFooter( $magicWord, $hfType, $pageIdentifier, $parserOutput ): string {
+	private function generateHeaderFooter(
+		$magicWord, $hfType, $pageIdentifier, $parserOutput, Title $title
+	): string {
 		if ( $parserOutput->getPageProperty( $magicWord ) !== null ) {
 			return '';
 		}
@@ -80,7 +88,7 @@ class AddHeaderFooter implements ContentAlterParserOutputHook {
 			return "$div</div>";
 		}
 
-		$msg = wfMessage( $msgId );
+		$msg = wfMessage( $msgId )->page( $title );
 		if ( $msg->isBlank() ) {
 			return '';
 		}
