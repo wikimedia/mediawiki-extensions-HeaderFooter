@@ -42,7 +42,7 @@ class ApiGetHeaderFooter extends ApiBase {
 			$messageText,
 			$contextTitle,
 			ParserOptions::newFromUser( $this->getUser() )
-		)->getText();
+		)->getContentHolderText();
 
 		$this->getResult()->addValue( null, $this->getModuleName(), [ 'result' => $messageText ] );
 	}
